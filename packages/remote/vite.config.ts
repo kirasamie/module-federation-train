@@ -7,9 +7,9 @@ export default defineConfig({
     react(),
     federation({
       name: "@train/remote-vite",
-      filename: "remoteEntry.js",
+      filename: "app.js",
       exposes: {
-        "./SuperButton": "./src/Button.tsx",
+        "./main": "./src/app/index.ts",
       },
       shared: ["react", "react-dom"],
     }),

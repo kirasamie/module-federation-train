@@ -9,7 +9,7 @@ export default defineConfig({
     federation({
       name: "app",
       remotes: {
-        '@train/remote-vite': 'http://localhost:5028/assets/remoteEntry.js',
+        '@train/remote-vite': 'http://localhost:5028/assets/app.js',
       },
       shared: ["react", "react-dom"],
     }),

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 // @ts-ignore
-  import { SuperButton } from '@train/remote-vite/SuperButton'
+  import { SuperButton } from '@train/remote-vite/main'
 
 function App() {
   
