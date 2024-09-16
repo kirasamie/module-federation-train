@@ -1,0 +1,26 @@
+{
+  "name": "module-federation-train",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"install:deps": "pnpm install && pnpm --prefix ./app-host-vite install --force && pnpm --prefix ./app-remote install --force",
+		"postinstall:deps": "pnpm --prefix ./app-host-vite run build && pnpm --prefix ./app-remote run build",
+		"serve": "run-p serve:*",
+		"serve:host": "pnpm --prefix ./app-host-vite run dev",
+		"serve:remote": "pnpm --prefix ./app-remoterun dev",
+		"build": "run-p build:*",
+		"build:host": "pnpm --prefix ./app-host-vite run build",
+		"build:remote": "pnpm --prefix ./app-remote run build",
+		"preview": "run-p preview:*",
+		"preview:host": "pnpm build:host && pnpm --prefix ./app-host-vite run preview",
+		"preview:remote": "pnpm build:remote && pnpm --prefix ./app-remote run preview"
+  },
+  "devDependencies": {
+		"husky": "^8.0.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.8.2"
+	},
+  "author": "Kirill Budaev",
+  "license": "ISC"
+}
