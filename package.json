@@ -3,17 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-		"install:deps": "pnpm install && pnpm --prefix ./app-host-vite install --force && pnpm --prefix ./app-remote install --force",
-		"postinstall:deps": "pnpm --prefix ./app-host-vite run build && pnpm --prefix ./app-remote run build",
-		"serve": "run-p serve:*",
-		"serve:host": "pnpm --prefix ./app-host-vite run dev",
-		"serve:remote": "pnpm --prefix ./app-remoterun dev",
-		"build": "run-p build:*",
-		"build:host": "pnpm --prefix ./app-host-vite run build",
-		"build:remote": "pnpm --prefix ./app-remote run build",
-		"host:remote": "run-p preview:*",
-		"preview:host": "pnpm build:host && pnpm --prefix ./app-host-vite run preview",
-		"preview:remote": "pnpm build:remote && pnpm --prefix ./app-remote run preview"
+    "install:all": "pnpm install --recursive",
+    "remote:vite": "pnpm --filter @train/remote-vite run build && pnpm --filter @train/remote-vite run serve",
+    "host:vite": "pnpm --filter @train/host-vite run build && pnpm --filter @train/host-vite run preview"
   },
   "devDependencies": {
 		"npm-run-all": "^4.1.5",
